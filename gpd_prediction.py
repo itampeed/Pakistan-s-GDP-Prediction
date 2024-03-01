@@ -91,6 +91,7 @@ y = gdp_values.values
 poly_features = PolynomialFeatures(degree=3)
 X_poly = poly_features.fit_transform(X)
 model = LinearRegression()
+
 model.fit(X_poly, y)
 years_to_predict = np.arange(start_year, end_year + 1).reshape(-1, 1)
 X_poly_predict = poly_features.transform(years_to_predict)
